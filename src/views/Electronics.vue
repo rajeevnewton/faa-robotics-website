@@ -468,6 +468,8 @@ onMounted(() => {
   background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.05), transparent);
   transform: rotate(45deg);
   transition: all 0.6s ease;
+  pointer-events: none;
+  z-index: 0;
 }
 
 .module-card:hover::before {
@@ -569,6 +571,8 @@ onMounted(() => {
   align-items: flex-start;
   gap: 0.75rem;
   margin-bottom: 1rem;
+  position: relative;
+  z-index: 1;
 }
 
 .module-icon {
@@ -658,16 +662,21 @@ onMounted(() => {
   border-radius: 12px;
   overflow: hidden;
   margin-bottom: 1rem;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.04));
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  position: relative;
+  z-index: 1;
 }
 
 .module-image img {
-  width: 100%;
-  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
   object-fit: contain;
   transition: transform 0.4s ease;
-  background: rgba(0, 0, 0, 0.2);
 }
 
 .module-card:hover .module-image img {
@@ -684,6 +693,8 @@ onMounted(() => {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  position: relative;
+  z-index: 1;
 }
 
 .module-items li {
@@ -967,8 +978,7 @@ onMounted(() => {
   }
 
   .module-header {
-    align-items: center;
-    text-align: center;
+    align-items: flex-start;
   }
 
   .module-title {
@@ -976,7 +986,7 @@ onMounted(() => {
   }
 
   .module-image {
-    height: 180px;
+    height: 200px;
   }
 }
 
@@ -1011,7 +1021,7 @@ onMounted(() => {
   }
 
   .module-image {
-    height: 160px;
+    height: 180px;
   }
 }
 </style>
