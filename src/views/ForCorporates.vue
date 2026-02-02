@@ -410,6 +410,33 @@ onUnmounted(() => {
   overflow: hidden;
 }
 
+@media (max-width: 768px) {
+  .hero-header {
+    height: auto;
+    min-height: 100vh;
+    padding: 2rem 1.5rem;
+  }
+
+  .hero-content {
+    padding: 1rem !important;
+  }
+
+  .subtitle {
+    font-size: 1.2rem !important;
+    margin: 1rem 0 !important;
+  }
+
+  .slogan {
+    font-size: 1rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+
+  .hero-badge {
+    padding: 0.75rem 1.5rem !important;
+    font-size: 1rem !important;
+  }
+}
+
 .hero-background {
   position: absolute;
   top: 0;
@@ -508,6 +535,13 @@ onUnmounted(() => {
   background-clip: text;
   animation: gradientShift 4s ease-in-out infinite, textGlow 2s ease-in-out infinite;
   text-shadow: 0 0 60px rgba(0, 255, 255, 0.5);
+}
+
+@media (max-width: 768px) {
+  .main-title {
+    font-size: 2.8rem;
+    letter-spacing: 3px;
+  }
 }
 
 @keyframes gradientShift {

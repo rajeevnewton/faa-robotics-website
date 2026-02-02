@@ -1122,6 +1122,11 @@ const steps = [
     font-size: 2.2rem;
   }
 
+  .zones-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
   .zones-section,
   .awards-section,
   .participate-section {

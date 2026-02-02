@@ -1063,6 +1063,19 @@ const contactUs = () => {
     grid-template-columns: 1fr;
   }
 
+  .squad-image-wrapper {
+    height: auto;
+    aspect-ratio: 3 / 4;
+    max-height: 350px;
+  }
+
+  .squad-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+  }
+
   .careers-section {
     padding: 4rem 1.5rem;
   }

@@ -801,6 +801,9 @@ onUnmounted(() => {
   grid-template-columns: repeat(4, 1fr);
   gap: 1.5rem;
   margin-bottom: 2rem;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 .service-category {
@@ -1326,8 +1329,14 @@ onUnmounted(() => {
     font-size: 2rem;
   }
 
+  .lab-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
   .service-grid {
     grid-template-columns: 1fr;
+    gap: 1rem;
   }
 
   .dt-process-scroll {
