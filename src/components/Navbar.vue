@@ -89,7 +89,82 @@
         </router-link>
       </div>
 
+      <!-- Mobile Menu Button -->
+      <button class="mobile-menu-btn" @click="mobileMenuOpen = !mobileMenuOpen" aria-label="Toggle Menu">
+        <i class="fas" :class="mobileMenuOpen ? 'fa-times' : 'fa-bars'"></i>
+      </button>
     </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <transition name="mobile-menu">
+      <div v-if="mobileMenuOpen" class="mobile-menu-overlay">
+        <div class="mobile-menu-content">
+          <router-link 
+            v-for="link in navLinks" 
+            :key="link.path"
+            :to="link.path"
+            class="mobile-nav-link"
+            @click="mobileMenuOpen = false"
+          >
+            {{ link.name }}
+          </router-link>
+          
+          <!-- Student Zone Mobile -->
+          <div class="mobile-dropdown">
+            <div class="mobile-dropdown-header" @click="mobileStudentZone = !mobileStudentZone">
+              Student Zone
+              <i class="fas fa-chevron-down" :class="{ 'rotated': mobileStudentZone }"></i>
+            </div>
+            <transition name="mobile-dropdown-slide">
+              <div v-if="mobileStudentZone" class="mobile-dropdown-content">
+                <router-link 
+                  v-for="item in studentZoneLinks" 
+                  :key="item.path"
+                  :to="item.path"
+                  class="mobile-dropdown-item"
+                  @click="mobileMenuOpen = false"
+                >
+                  <i :class="item.icon"></i>
+                  {{ item.name }}
+                </router-link>
+              </div>
+            </transition>
+          </div>
+
+          <!-- Robo Store Mobile -->
+          <div class="mobile-dropdown">
+            <div class="mobile-dropdown-header" @click="mobileRoboStore = !mobileRoboStore">
+              Robo Store
+              <i class="fas fa-chevron-down" :class="{ 'rotated': mobileRoboStore }"></i>
+            </div>
+            <transition name="mobile-dropdown-slide">
+              <div v-if="mobileRoboStore" class="mobile-dropdown-content">
+                <router-link 
+                  v-for="item in roboStoreLinks" 
+                  :key="item.path"
+                  :to="item.path"
+                  class="mobile-dropdown-item"
+                  @click="mobileMenuOpen = false"
+                >
+                  <i :class="item.icon"></i>
+                  {{ item.name }}
+                </router-link>
+              </div>
+            </transition>
+          </div>
+
+          <router-link 
+            v-for="link in postStudentLinks" 
+            :key="link.path"
+            :to="link.path"
+            class="mobile-nav-link"
+            @click="mobileMenuOpen = false"
+          >
+            {{ link.name }}
+          </router-link>
+        </div>
+      </div>
+    </transition>
   </header>
 </template>
 
@@ -100,6 +175,9 @@ import { useRoute } from 'vue-router'
 const $route = useRoute()
 const showDropdown = ref(false)
 const showStoreDropdown = ref(false)
+const mobileMenuOpen = ref(false)
+const mobileStudentZone = ref(false)
+const mobileRoboStore = ref(false)
 
 const navLinks = [
   { name: 'Home', path: '/' },
@@ -305,5 +383,163 @@ const postStudentLinks = [
   .desktop-menu {
     display: none !important;
   }
+}
+
+/* Mobile Menu Styles */
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: #000000;
+  font-size: 1.8rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+.mobile-menu-btn:hover {
+  transform: scale(1.1);
+}
+
+.mobile-menu-btn:active {
+  transform: scale(0.95);
+}
+
+@media (max-width: 1024px) {
+  .mobile-menu-btn {
+    display: block;
+  }
+}
+
+.mobile-menu-overlay {
+  position: fixed;
+  top: 70px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #00bfff 0%, #00a8e0 100%);
+  z-index: 999;
+  overflow-y: auto;
+}
+
+.mobile-menu-content {
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.mobile-nav-link {
+  display: block;
+  padding: 1rem 1.5rem;
+  color: #000000;
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.mobile-nav-link:hover,
+.mobile-nav-link:active {
+  background: rgba(255, 179, 0, 0.3);
+  transform: translateX(10px);
+}
+
+.mobile-dropdown {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.mobile-dropdown-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  color: #000000;
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.mobile-dropdown-header:hover {
+  background: rgba(255, 179, 0, 0.2);
+}
+
+.mobile-dropdown-header i {
+  transition: transform 0.3s ease;
+}
+
+.mobile-dropdown-header i.rotated {
+  transform: rotate(180deg);
+}
+
+.mobile-dropdown-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0.5rem;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.mobile-dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.875rem 1.25rem;
+  color: #000000;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.mobile-dropdown-item:hover,
+.mobile-dropdown-item:active {
+  background: rgba(255, 179, 0, 0.3);
+  transform: translateX(5px);
+}
+
+.mobile-dropdown-item i {
+  font-size: 1.2rem;
+  color: #ffb300;
+  min-width: 24px;
+}
+
+/* Mobile Menu Animations */
+.mobile-menu-enter-active,
+.mobile-menu-leave-active {
+  transition: all 0.3s ease;
+}
+
+.mobile-menu-enter-from {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+.mobile-menu-leave-to {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+.mobile-dropdown-slide-enter-active,
+.mobile-dropdown-slide-leave-active {
+  transition: all 0.3s ease;
+  max-height: 500px;
+}
+
+.mobile-dropdown-slide-enter-from,
+.mobile-dropdown-slide-leave-to {
+  max-height: 0;
+  opacity: 0;
 }
 </style>

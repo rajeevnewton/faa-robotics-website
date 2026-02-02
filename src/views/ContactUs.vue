@@ -147,6 +147,10 @@
                 <i class="fab fa-whatsapp"></i>
                 <span>WhatsApp</span>
               </a>
+              <a href="https://www.whatsapp.com/channel/0029VaxBItr3GJP1vvedFX0h" target="_blank" class="social-link whatsapp-channel">
+                <i class="fab fa-whatsapp"></i>
+                <span>WhatsApp Channel</span>
+              </a>
             </div>
           </div>
 
@@ -689,6 +693,33 @@ const handleSubmit = async () => {
   background: rgba(37, 211, 102, 0.2);
   transform: translateY(-3px);
   box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3);
+}
+
+.social-link.whatsapp-channel {
+  background: rgba(37, 211, 102, 0.1);
+  border-color: rgba(37, 211, 102, 0.3);
+  color: #25d366;
+  position: relative;
+}
+
+.social-link.whatsapp-channel:hover {
+  background: rgba(37, 211, 102, 0.2);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3);
+}
+
+.social-link.whatsapp-channel::after {
+  content: 'CHANNEL';
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: #ffb300;
+  color: #000000;
+  font-size: 0.6rem;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 4px;
+  letter-spacing: 0.5px;
 }
 
 /* ================================

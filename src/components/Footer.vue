@@ -48,6 +48,10 @@
             <a href="https://api.whatsapp.com/send/?phone=%2B919490871276" target="_blank" rel="noopener" class="social-icon" title="WhatsApp">
               <i class="fab fa-whatsapp"></i>
             </a>
+            <a href="https://www.whatsapp.com/channel/0029VaxBItr3GJP1vvedFX0h" target="_blank" rel="noopener" class="social-icon" title="WhatsApp Channel">
+              <i class="fab fa-whatsapp"></i>
+              <span class="channel-badge">Channel</span>
+            </a>
           </div>
 
           <div class="footer-contact-info">
@@ -347,6 +351,7 @@
   transition: all 0.3s ease;
   font-size: 1.1rem;
   text-decoration: none;
+  position: relative;
 }
 
 .social-icon:hover {
@@ -354,6 +359,20 @@
   color: #000000;
   transform: translateY(-4px);
   box-shadow: 0 8px 16px rgba(0, 191, 255, 0.4);
+}
+
+.channel-badge {
+  position: absolute;
+  bottom: -8px;
+  right: -5px;
+  background: #ffb300;
+  color: #000000;
+  font-size: 0.5rem;
+  font-weight: 700;
+  padding: 2px 4px;
+  border-radius: 4px;
+  white-space: nowrap;
+  letter-spacing: 0.5px;
 }
 
 .footer-contact-info {
