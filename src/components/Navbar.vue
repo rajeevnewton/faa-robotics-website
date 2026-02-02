@@ -104,6 +104,7 @@ const showStoreDropdown = ref(false)
 const navLinks = [
   { name: 'Home', path: '/' },
   { name: 'About Us', path: '/about' },
+  { name: 'For Corporates', path: '/corporates' },
   { name: 'For Institutions', path: '/institutions' }
 ]
 

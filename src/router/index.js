@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 import AboutUs from '../views/AboutUs.vue'
 import ForInstitutions from '../views/ForInstitutions.vue'
+import ForCorporates from '../views/ForCorporates.vue'
 import AcademyHallOfFame from '../views/AcademyHallOfFame.vue'
 import ChathurvidhCompetition from '../views/ChathurvidhCompetition.vue'
 import InternshipsWorkshops from '../views/InternshipsWorkshops.vue'
@@ -20,6 +21,11 @@ const routes = [
     path: '/about',
     name: 'AboutUs',
     component: AboutUs
+  },
+  {
+    path: '/corporates',
+    name: 'ForCorporates',
+    component: ForCorporates
   },
   {
     path: '/institutions',
