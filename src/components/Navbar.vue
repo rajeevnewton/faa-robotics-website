@@ -119,6 +119,12 @@ const studentZoneLinks = [
     path: '/student-zone/chathurvidha',
     icon: 'fas fa-trophy',
     description: 'Innovation Challenge'
+  },
+  { 
+    name: 'Internships & Workshops', 
+    path: '/student-zone/internships',
+    icon: 'fas fa-rocket',
+    description: 'Career-Focused Training'
   }
 ]
 

@@ -4,6 +4,7 @@ import AboutUs from '../views/AboutUs.vue'
 import ForInstitutions from '../views/ForInstitutions.vue'
 import AcademyHallOfFame from '../views/AcademyHallOfFame.vue'
 import ChathurvidhCompetition from '../views/ChathurvidhCompetition.vue'
+import InternshipsWorkshops from '../views/InternshipsWorkshops.vue'
 import Electronics from '../views/Electronics.vue'
 import Books from '../views/Books.vue'
 import Robots from '../views/Robots.vue'
@@ -38,6 +39,11 @@ const routes = [
     path: '/student-zone/chathurvidha',
     name: 'ChathurvidhCompetition',
     component: ChathurvidhCompetition
+  },
+  {
+    path: '/student-zone/internships',
+    name: 'InternshipsWorkshops',
+    component: InternshipsWorkshops
   },
   {
     path: '/store',
