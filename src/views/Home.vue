@@ -670,6 +670,7 @@ function animateStats() {
   .hero-buttons {
     flex-direction: column;
     gap: 1rem;
+    align-items: center;
   }
 
   .hero-btn {

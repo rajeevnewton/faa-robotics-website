@@ -1476,7 +1476,9 @@ onUnmounted(() => {
 
   .section-header {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
   }
 
   .section-title {

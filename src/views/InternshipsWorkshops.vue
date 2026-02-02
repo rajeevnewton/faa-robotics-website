@@ -1575,14 +1575,21 @@ onMounted(() => {
 @media (max-width: 768px) {
   .hero-section {
     padding: 6rem 1.5rem 3rem 1.5rem;
+    text-align: center;
   }
 
   .hero-title {
     font-size: 2rem;
   }
 
+  .hero-subtitle {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   .hero-badges {
     gap: 1rem;
+    justify-content: center;
   }
 
   .main-section {
@@ -1591,7 +1598,9 @@ onMounted(() => {
 
   .section-header {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
     gap: 1rem;
   }
 

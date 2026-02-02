@@ -193,10 +193,14 @@
 }
 
 .footer-logo-img {
-  width: 60px;
-  height: 60px;
+  width: 90px;
+  height: 90px;
   object-fit: contain;
   flex-shrink: 0;
+  background: rgba(243, 244, 246, 0.15);
+  border-radius: 8px;
+  padding: 8px;
+  backdrop-filter: blur(10px);
 }
 
 .logo-badge {
@@ -266,31 +270,32 @@
 }
 
 .partner-item {
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 10px;
-  padding: 0.8rem 1.2rem;
+  background: rgba(243, 244, 246, 0.15);
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: all 0.3s ease;
-  border: 1px solid rgba(0, 191, 255, 0.2);
-  height: 60px;
-  min-width: 100px;
+  border: 1.5px solid rgba(0, 191, 255, 0.3);
+  height: 70px;
+  min-width: 120px;
+  backdrop-filter: blur(10px);
 }
 
 .partner-item:hover {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(0, 191, 255, 0.4);
+  background: rgba(243, 244, 246, 0.25);
+  border-color: rgba(0, 191, 255, 0.6);
   transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(0, 191, 255, 0.2);
+  box-shadow: 0 8px 20px rgba(0, 191, 255, 0.3), inset 0 0 20px rgba(0, 255, 255, 0.1);
 }
 
 .partner-item img {
   max-width: 100%;
-  max-height: 40px;
+  max-height: 45px;
   object-fit: contain;
-  filter: brightness(0.95);
-  transition: filter 0.3s ease;
+  filter: brightness(1.2) contrast(1.1);
+  transition: all 0.3s ease;
 }
 
 .partner-item:hover img {

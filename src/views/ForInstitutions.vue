@@ -1314,11 +1314,17 @@ onUnmounted(() => {
 @media (max-width: 768px) {
   .page-header {
     padding: 4rem 1.5rem 2rem;
+    text-align: center;
   }
 
   .page-title {
     font-size: 2.5rem;
     letter-spacing: 2px;
+  }
+
+  .title-underline {
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .section-container {
