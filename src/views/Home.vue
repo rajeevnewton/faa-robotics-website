@@ -61,8 +61,8 @@
         </h2>
         <div class="trust-logos-wrapper">
           <div class="trust-logos">
-            <div class="logo-item" v-for="n in 12" :key="n">
-              <img :src="`/assets/Home/Trust${((n - 1) % 6) + 1}.png`" :alt="`Trust Logo ${((n - 1) % 6) + 1}`" class="trust-logo" />
+            <div class="logo-item" v-for="n in 14" :key="n">
+              <img :src="`/assets/Home/Trust${((n - 1) % 7) + 1}.png`" :alt="`Trust Logo ${((n - 1) % 7) + 1}`" class="trust-logo" />
             </div>
           </div>
         </div>
